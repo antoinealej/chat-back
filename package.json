@@ -1,0 +1,44 @@
+{
+  "name": "chat-back",
+  "version": "1.0.0",
+  "description": "A simple chat backend application",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --es-module-specifier-resolution=node src/index.js",
+    "lint": "eslint --ext .js src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoinealej/chat-back.git"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "keywords": [
+    "Chat",
+    "NodeJs",
+    "GraphQL",
+    "apollo"
+  ],
+  "type": "module",
+  "author": "Antoine Alejandro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoinealej/chat-back/issues"
+  },
+  "homepage": "https://github.com/antoinealej/chat-back#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.22.2",
+    "dotenv": "^8.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "pre-commit": "^1.2.2"
+  }
+}
