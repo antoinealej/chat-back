@@ -33,6 +33,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
+    "node-cache": "^5.1.2",
     "winston": "^3.3.3"
   },
   "devDependencies": {

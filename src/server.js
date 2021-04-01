@@ -1,12 +1,25 @@
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
 import configs from './configs';
-import typeDefs from './schemas/schemas';
-import resolvers from './resolvers/resolvers';
+import schema from './schemas/schema';
 import logger from './utils/logger';
+import {
+  init,
+  message,
+  user,
+  forum,
+} from './services/cache';
 
 export default async function startApolloServer() {
-  const server = new ApolloServer({ typeDefs, resolvers });
+  init();
+  const server = new ApolloServer({
+    schema,
+    dataSources: () => ({
+      userCollection: user,
+      forumCollection: forum,
+      messageCollection: message,
+    }),
+  });
   await server.start();
 
   const app = express();
