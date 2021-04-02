@@ -18,6 +18,13 @@ docker build -t chat-back .
 docker run -p 4000:4000 -d chat-back
 ```
 ## GraphQL
+For each Query, Mutation or Subscription you have to be authenticated, 
+add the authorization header in the HTTP headers
+```
+{
+  "authorization": "u3"
+}
+```
 #### Types
 ```
 type Forum {
