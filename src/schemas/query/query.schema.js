@@ -1,7 +1,7 @@
 import { GraphQLObjectType } from 'graphql';
-import forumQueries from './forum.schema';
-import userQuery from './user.schema';
-import messageQuery from './message.schema';
+import forumQueries from './forum.query';
+import userQuery from './user.query';
+import messageQuery from './message.query';
 
 const querySchema = new GraphQLObjectType({
   name: 'Query',

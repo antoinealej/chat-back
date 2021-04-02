@@ -9,6 +9,7 @@ import {
   user,
   forum,
 } from './services/cache';
+import errorHandler from './utils/errorHandler';
 
 export default async function startApolloServer() {
   init();
@@ -19,6 +20,19 @@ export default async function startApolloServer() {
       forumCollection: forum,
       messageCollection: message,
     }),
+    context: ({ req }) => {
+      // We should verify and decode the token to get the user ID but since we don't
+      // implement the auth part the authorization header will be the userId
+      const userId = req.headers.authorization || '';
+
+      const u = user.get(userId);
+      if (!u) {
+        errorHandler('You must login first', 'NOT_AUTHENTICATED');
+      }
+
+      // Add the user to the context
+      return { user: u };
+    },
   });
   await server.start();
 

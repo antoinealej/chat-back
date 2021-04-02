@@ -1,8 +1,13 @@
 import { GraphQLList, GraphQLNonNull, GraphQLString } from 'graphql';
 import userType from '../../types/user.type';
-import { getAll } from '../../resolvers/query/user.resolver';
+import { getAll, getSelf } from '../../resolvers/query/user.resolver';
 
 export default {
+  me: {
+    description: 'Get my (the authenticated user) details',
+    type: userType,
+    resolve: getSelf,
+  },
   users: {
     args: {
       forumId: {

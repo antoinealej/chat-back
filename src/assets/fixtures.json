@@ -1,50 +1,73 @@
 {
   "users": [
-    { "id": "1", "name": "Marc", "picture": "path/to/marc/pic",
-      "forums": [{ "id": "4", "name": "Music" }, { "id": "1", "name": "Cooking" }]
-    },
-    { "id": "2", "name": "Michel", "picture": "path/to/michel/pic",
-      "forums": [{ "id": "4", "name": "Music" }, { "id": "3", "name": "Sport" }]
-    },
-    { "id": "3", "name": "Vanessa", "picture": "path/to/vanessa/pic",
-      "forums": [{ "id": "3", "name": "Sport" }]
-    },
-    { "id": "4", "name": "Joe", "picture": "path/to/joe/pic" }
+    { "id": "u1", "name": "Marc", "picture": "path/to/marc/pic" },
+    { "id": "u2", "name": "Michel", "picture": "path/to/michel/pic" },
+    { "id": "u3", "name": "Vanessa", "picture": "path/to/vanessa/pic" },
+    { "id": "u4", "name": "Joe", "picture": "path/to/joe/pic" }
   ],
   "forums": [
-    { "id": "1", "name": "Cooking" },
-    { "id": "2", "name": "Cars" },
-    { "id": "3", "name": "Sport" },
-    { "id": "4", "name": "Music" }
+    {
+      "id": "f1",
+      "name": "Cooking",
+      "users": [
+        { "id": "u1", "name": "Marc", "picture": "path/to/marc/pic" },
+        { "id": "u3", "name": "Vanessa", "picture": "path/to/vanessa/pic" }
+      ]
+    },
+    {
+      "id": "f2",
+      "name": "Cars",
+      "users": [
+        { "id": "u2", "name": "Michel", "picture": "path/to/michel/pic" }
+      ]
+    },
+    {
+      "id": "f3",
+      "name": "Sport"
+    },
+    {
+      "id": "f4",
+      "name": "Music",
+      "users": [
+        { "id": "u1", "name": "Marc", "picture": "path/to/marc/pic" },
+        { "id": "u2", "name": "Michel", "picture": "path/to/michel/pic" }
+      ]
+    }
   ],
   "messages": [
     {
-      "id": "1",
-      "content": "Hi!",
-      "author": { "id": "1", "name": "Marc", "picture": "path/to/marc/pic" },
-      "forum": { "id": "4", "name": "Music" },
-      "sentAt": "2021-04-01T03:00:45.708Z"
-    },
-    {
-      "id": "2",
-      "content": "Hi Marc :)",
-      "author": { "id": "2", "name": "Michel", "picture": "path/to/michel/pic" },
-      "forum": { "id": "4", "name": "Music" },
-      "sentAt": "2021-04-01T03:01:45.708Z"
-    },
-    {
-      "id": "3",
+      "id": "m3",
       "content": "Wanna listen to some music with me?",
-      "author": { "id": "1", "name": "Marc", "picture": "path/to/marc/pic" },
-      "forum": { "id": "4", "name": "Music" },
+      "author": { "id": "u1", "name": "Marc", "picture": "path/to/marc/pic" },
+      "forum": { "id": "f4", "name": "Music" },
       "sentAt": "2021-04-01T03:01:55.708Z"
     },
     {
-      "id": "4",
+      "id": "m1",
+      "content": "Hi!",
+      "author": { "id": "u1", "name": "Marc", "picture": "path/to/marc/pic" },
+      "forum": { "id": "f4", "name": "Music" },
+      "sentAt": "2021-04-01T03:00:45.708Z"
+    },
+    {
+      "id": "m2",
+      "content": "Hi Marc :)",
+      "author": { "id": "u2", "name": "Michel", "picture": "path/to/michel/pic" },
+      "forum": { "id": "f4", "name": "Music" },
+      "sentAt": "2021-04-01T03:01:45.708Z"
+    },
+    {
+      "id": "m4",
       "content": "Sure",
-      "author": { "id": "2", "name": "Michel", "picture": "path/to/michel/pic" },
-      "forum": { "id": "4", "name": "Music" },
+      "author": { "id": "u2", "name": "Michel", "picture": "path/to/michel/pic" },
+      "forum": { "id": "f4", "name": "Music" },
       "sentAt": "2021-04-01T03:02:03.708Z"
+    },
+    {
+      "id": "m5",
+      "content": "Let's do this",
+      "author": { "id": "u2", "name": "Michel", "picture": "path/to/michel/pic" },
+      "forum": { "id": "f4", "name": "Music" }
     }
   ]
 }

@@ -1,5 +1,4 @@
-import { GraphQLList, GraphQLObjectType, GraphQLString } from 'graphql';
-import forumType from './forum.type';
+import { GraphQLObjectType, GraphQLString } from 'graphql';
 
 const userType = new GraphQLObjectType({
   name: 'User',
@@ -7,7 +6,6 @@ const userType = new GraphQLObjectType({
     id: { type: GraphQLString, description: 'The user ID' },
     name: { type: GraphQLString, description: 'The user name' },
     picture: { type: GraphQLString, description: 'The user profile picture' },
-    forums: { type: new GraphQLList(forumType), description: 'The list of the forums the user joined' },
   },
 });
 
