@@ -3,7 +3,7 @@ import messageType from '../../types/message.type';
 import { getAll } from '../../resolvers/query/message.resolver';
 
 export default {
-  messages: {
+  forumMessages: {
     args: {
       forumId: {
         description: 'The ID of the forum you want to get the messages from',

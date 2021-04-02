@@ -3,7 +3,7 @@ import messageType from '../../types/message.type';
 import { subscribeForumMessage } from '../../resolvers/query/message.resolver';
 
 export default {
-  feedMessages: {
+  feedForumMessages: {
     description: 'Subscription of a forum messages',
     type: messageType,
     args: {

@@ -8,7 +8,7 @@ export default {
     type: userType,
     resolve: getSelf,
   },
-  users: {
+  forumUsers: {
     args: {
       forumId: {
         description: 'The ID of the forum you want to get the users from',

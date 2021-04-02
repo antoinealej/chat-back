@@ -14,7 +14,7 @@ export default {
     },
     resolve: createForum,
   },
-  join: {
+  joinForum: {
     description: 'Join a forum',
     type: forumType,
     args: {
