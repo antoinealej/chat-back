@@ -2,6 +2,7 @@ import NodeCache from 'node-cache';
 import fixtures from '../assets/fixtures.json';
 import errorHandler from '../utils/errorHandler';
 import { generateId } from '../utils/generator';
+import pubsub, { MESSAGE_POSTED } from '../pubsub';
 
 const userCache = new NodeCache();
 const forumCache = new NodeCache();
@@ -84,6 +85,9 @@ export const message = {
     if (!localForum) {
       errorHandler(`The forum '${forumId}' does not exit`, 'NO_FORUM_FOUND');
     }
+    if (!localForum.users.find((u) => u.id === userId)) {
+      errorHandler(`The user '${userId}' did not join the forum '${forumId}'`, 'NOT_JOIN_FORUM');
+    }
 
     const localMessage = {
       id: generateId(),
@@ -93,6 +97,9 @@ export const message = {
       author: user.get(userId),
     };
     messageCache.set(localMessage.id, localMessage);
+
+    pubsub.publish(MESSAGE_POSTED, localMessage);
+
     return localMessage;
   },
 };
