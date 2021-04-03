@@ -1,4 +1,7 @@
 # Chat Backend
+## Tags
+- v1.x.x is the Part 1
+- v2.x.x is the Part 2
 ## Local installation
 ```
 git clone git@github.com:antoinealej/chat-back.git
